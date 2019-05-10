@@ -50,7 +50,7 @@ class TranslateSession:
 
     BASE_TIMEOUT = 10
 
-    def __init__(self, proxy: Dict = None, headers: Dict = None, cookies: Dict = None, timeout: int = None):
+    def __init__(self, proxy=None, headers=None, cookies=None, timeout=None):
         self.timeout = timeout
         self.cookies = cookies
         self.headers = headers

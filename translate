@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import argparse
 import sys
-from googletrans import Translator
+from asyncgltranslate import Translator
 
 def main():
     parser = argparse.ArgumentParser(

@@ -3,7 +3,7 @@ from pytest import raises
 from requests.exceptions import ConnectionError
 from requests.exceptions import ReadTimeout
 
-from googletrans import Translator
+from asyncgltranslate import Translator
 
 
 def test_bind_multiple_service_urls():

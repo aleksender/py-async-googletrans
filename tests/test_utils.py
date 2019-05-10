@@ -1,4 +1,4 @@
-from googletrans import utils
+from asyncgltranslate import utils
 from pytest import raises
 
 
