@@ -35,14 +35,14 @@ def get_readme():
 
 def install():
     setup(
-        name='googletrans',
+        name='asyncgoogletrans',
         version=get_version(),
         description=get_description(),
         long_description=get_readme(),
         license='MIT',
-        author='SuHun Han',
-        author_email='ssut' '@' 'ssut.me',
-        url='https://github.com/ssut/py-googletrans',
+        author='Aleksandr Khliupin',
+        author_email='kampotsasha6' '@' 'gmail.com',
+        url='https://github.com/AleksandrKhliupin/py-async-googletrans',
         classifiers=['Development Status :: 5 - Production/Stable',
                      'Intended Audience :: Education',
                      'Intended Audience :: End Users/Desktop',
