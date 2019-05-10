@@ -1,4 +1,4 @@
-"""A conversion module for asyncgltranslate"""
+"""A conversion module for asyncgltrans"""
 from __future__ import print_function
 import re
 import json

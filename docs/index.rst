@@ -100,7 +100,39 @@ URLs are provided it then randomly chooses a domain.
 
 .. code:: python
 
-    >>> from asyncgltranslate import Translator
+    >>> from asyncgltrans import Translator
+                    >>> translator = Translator(service_urls=[
+                          'translate.google.com',
+                          'translate.google.co.kr',
+                        ])
+                >>> translator = Translator(service_urls=[
+                      'translate.google.com',
+                      'translate.google.co.kr',
+                    ])
+                >>> translator = Translator(service_urls=[
+                      'translate.google.com',
+                      'translate.google.co.kr',
+                    ])
+            >>> translator = Translator(service_urls=[
+                  'translate.google.com',
+                  'translate.google.co.kr',
+                ])
+                >>> translator = Translator(service_urls=[
+                      'translate.google.com',
+                      'translate.google.co.kr',
+                    ])
+            >>> translator = Translator(service_urls=[
+                  'translate.google.com',
+                  'translate.google.co.kr',
+                ])
+            >>> translator = Translator(service_urls=[
+                  'translate.google.com',
+                  'translate.google.co.kr',
+                ])
+        >>> translator = Translator(service_urls=[
+              'translate.google.com',
+              'translate.google.co.kr',
+            ])
                 >>> translator = Translator(service_urls=[
                       'translate.google.com',
                       'translate.google.co.kr',

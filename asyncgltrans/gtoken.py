@@ -7,10 +7,10 @@ import time
 import requests
 
 
-from asyncgltranslate.compat import PY3
-from asyncgltranslate.compat import unicode
-from asyncgltranslate.utils import rshift
-from asyncgltranslate.models import TranslateSession
+from asyncgltrans.compat import PY3
+from asyncgltrans.compat import unicode
+from asyncgltrans.utils import rshift
+from asyncgltrans.aiosession import TranslateSession
 
 
 class TokenAcquirer(object):
@@ -31,7 +31,7 @@ class TokenAcquirer(object):
     token from translate.google.com.
 
     Example usage:
-        >>> from asyncgltranslate.gtoken import TokenAcquirer
+        >>> from asyncgltrans.gtoken import TokenAcquirer
         >>> acquirer = TokenAcquirer()
         >>> text = 'test'
         >>> tk = acquirer.do(text)

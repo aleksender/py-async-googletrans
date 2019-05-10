@@ -80,7 +80,63 @@ source language.
 
 .. code:: python
 
-    >>> from asyncgltranslate import Translator
+    >>> from asyncgltrans import Translator
+                    >>> translator = Translator()
+                    >>> translator.translate('안녕하세요.')
+                    # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+                    >>> translator.translate('안녕하세요.', dest='ja')
+                    # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+                    >>> translator.translate('veritas lux mea', src='la')
+                    # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+                >>> translator = Translator()
+                >>> translator.translate('안녕하세요.')
+                # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+                >>> translator.translate('안녕하세요.', dest='ja')
+                # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+                >>> translator.translate('veritas lux mea', src='la')
+                # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+                >>> translator = Translator()
+                >>> translator.translate('안녕하세요.')
+                # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+                >>> translator.translate('안녕하세요.', dest='ja')
+                # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+                >>> translator.translate('veritas lux mea', src='la')
+                # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+            >>> translator = Translator()
+            >>> translator.translate('안녕하세요.')
+            # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+            >>> translator.translate('안녕하세요.', dest='ja')
+            # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+            >>> translator.translate('veritas lux mea', src='la')
+            # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+                >>> translator = Translator()
+                >>> translator.translate('안녕하세요.')
+                # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+                >>> translator.translate('안녕하세요.', dest='ja')
+                # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+                >>> translator.translate('veritas lux mea', src='la')
+                # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+            >>> translator = Translator()
+            >>> translator.translate('안녕하세요.')
+            # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+            >>> translator.translate('안녕하세요.', dest='ja')
+            # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+            >>> translator.translate('veritas lux mea', src='la')
+            # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+            >>> translator = Translator()
+            >>> translator.translate('안녕하세요.')
+            # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+            >>> translator.translate('안녕하세요.', dest='ja')
+            # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+            >>> translator.translate('veritas lux mea', src='la')
+            # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
+        >>> translator = Translator()
+        >>> translator.translate('안녕하세요.')
+        # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
+        >>> translator.translate('안녕하세요.', dest='ja')
+        # <Translated src=ko dest=ja text=こんにちは。 pronunciation=Kon'nichiwa.>
+        >>> translator.translate('veritas lux mea', src='la')
+        # <Translated src=la dest=en text=The truth is my light pronunciation=The truth is my light>
                 >>> translator = Translator()
                 >>> translator.translate('안녕하세요.')
                 # <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
@@ -146,7 +202,39 @@ URLs are provided it then randomly chooses a domain.
 
 .. code:: python
 
-    >>> from asyncgltranslate import Translator
+    >>> from asyncgltrans import Translator
+                    >>> translator = Translator(service_urls=[
+                          'translate.google.com',
+                          'translate.google.co.kr',
+                        ])
+                >>> translator = Translator(service_urls=[
+                      'translate.google.com',
+                      'translate.google.co.kr',
+                    ])
+                >>> translator = Translator(service_urls=[
+                      'translate.google.com',
+                      'translate.google.co.kr',
+                    ])
+            >>> translator = Translator(service_urls=[
+                  'translate.google.com',
+                  'translate.google.co.kr',
+                ])
+                >>> translator = Translator(service_urls=[
+                      'translate.google.com',
+                      'translate.google.co.kr',
+                    ])
+            >>> translator = Translator(service_urls=[
+                  'translate.google.com',
+                  'translate.google.co.kr',
+                ])
+            >>> translator = Translator(service_urls=[
+                  'translate.google.com',
+                  'translate.google.co.kr',
+                ])
+        >>> translator = Translator(service_urls=[
+              'translate.google.com',
+              'translate.google.co.kr',
+            ])
                 >>> translator = Translator(service_urls=[
                       'translate.google.com',
                       'translate.google.co.kr',
@@ -204,7 +292,79 @@ a given sentence.
 
 .. code:: python
 
-    >>> from asyncgltranslate import Translator
+    >>> from asyncgltrans import Translator
+                    >>> translator = Translator()
+                    >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+                    # <Detected lang=ko confidence=0.27041003>
+                    >>> translator.detect('この文章は日本語で書かれました。')
+                    # <Detected lang=ja confidence=0.64889508>
+                    >>> translator.detect('This sentence is written in English.')
+                    # <Detected lang=en confidence=0.22348526>
+                    >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+                    # <Detected lang=eo confidence=0.10538048>
+                >>> translator = Translator()
+                >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+                # <Detected lang=ko confidence=0.27041003>
+                >>> translator.detect('この文章は日本語で書かれました。')
+                # <Detected lang=ja confidence=0.64889508>
+                >>> translator.detect('This sentence is written in English.')
+                # <Detected lang=en confidence=0.22348526>
+                >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+                # <Detected lang=eo confidence=0.10538048>
+                >>> translator = Translator()
+                >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+                # <Detected lang=ko confidence=0.27041003>
+                >>> translator.detect('この文章は日本語で書かれました。')
+                # <Detected lang=ja confidence=0.64889508>
+                >>> translator.detect('This sentence is written in English.')
+                # <Detected lang=en confidence=0.22348526>
+                >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+                # <Detected lang=eo confidence=0.10538048>
+            >>> translator = Translator()
+            >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+            # <Detected lang=ko confidence=0.27041003>
+            >>> translator.detect('この文章は日本語で書かれました。')
+            # <Detected lang=ja confidence=0.64889508>
+            >>> translator.detect('This sentence is written in English.')
+            # <Detected lang=en confidence=0.22348526>
+            >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+            # <Detected lang=eo confidence=0.10538048>
+                >>> translator = Translator()
+                >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+                # <Detected lang=ko confidence=0.27041003>
+                >>> translator.detect('この文章は日本語で書かれました。')
+                # <Detected lang=ja confidence=0.64889508>
+                >>> translator.detect('This sentence is written in English.')
+                # <Detected lang=en confidence=0.22348526>
+                >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+                # <Detected lang=eo confidence=0.10538048>
+            >>> translator = Translator()
+            >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+            # <Detected lang=ko confidence=0.27041003>
+            >>> translator.detect('この文章は日本語で書かれました。')
+            # <Detected lang=ja confidence=0.64889508>
+            >>> translator.detect('This sentence is written in English.')
+            # <Detected lang=en confidence=0.22348526>
+            >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+            # <Detected lang=eo confidence=0.10538048>
+            >>> translator = Translator()
+            >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+            # <Detected lang=ko confidence=0.27041003>
+            >>> translator.detect('この文章は日本語で書かれました。')
+            # <Detected lang=ja confidence=0.64889508>
+            >>> translator.detect('This sentence is written in English.')
+            # <Detected lang=en confidence=0.22348526>
+            >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+            # <Detected lang=eo confidence=0.10538048>
+        >>> translator = Translator()
+        >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
+        # <Detected lang=ko confidence=0.27041003>
+        >>> translator.detect('この文章は日本語で書かれました。')
+        # <Detected lang=ja confidence=0.64889508>
+        >>> translator.detect('This sentence is written in English.')
+        # <Detected lang=en confidence=0.22348526>
+        >>> translator.detect('Tiu frazo estas skribita en Esperanto.')
+        # <Detected lang=eo confidence=0.10538048>
                 >>> translator = Translator()
                 >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
                 # <Detected lang=ko confidence=0.27041003>

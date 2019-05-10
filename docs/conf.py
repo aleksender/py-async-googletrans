@@ -19,7 +19,7 @@ import os
 import shlex
 
 sys.path.append('..')
-import asyncgltranslate
+import asyncgltrans
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -64,7 +64,7 @@ author = 'SuHun Han (ssut)'
 # built documents.
 #
 # The short X.Y version.
-version = asyncgltranslate.__version__
+version = asyncgltrans.__version__
 # The full version, including alpha/beta/rc tags.
 release = version
 

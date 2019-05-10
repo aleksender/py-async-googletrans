@@ -1,5 +1,5 @@
 from docx import Document
-from asyncgltranslate import Translator
+from asyncgltrans import Translator
 
 
 def translate_doc(filename, destination='zh-CN', mix=True):

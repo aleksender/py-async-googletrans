@@ -7,12 +7,18 @@ You can translate text using this module.
 import requests
 import random
 
-from asyncgltranslate import urls, utils
-from asyncgltranslate.adapters import TimeoutAdapter
-from asyncgltranslate.compat import PY3
-from asyncgltranslate.gtoken import TokenAcquirer
-from asyncgltranslate.constants import DEFAULT_USER_AGENT, LANGCODES, LANGUAGES, SPECIAL_CASES
-from asyncgltranslate.models import Translated, Detected, TranslateSession
+try:
+    from urllib import urlencode
+except Exception:
+    from urllib.parse import urlencode
+
+from asyncgltrans import urls, utils
+from asyncgltrans.adapters import TimeoutAdapter
+from asyncgltrans.compat import PY3
+from asyncgltrans.gtoken import TokenAcquirer, AsyncTokenAcquirer
+from asyncgltrans.constants import DEFAULT_USER_AGENT, LANGCODES, LANGUAGES, SPECIAL_CASES
+from asyncgltrans.models import Translated, Detected
+from asyncgltrans.aiosession import TranslateSession
 
 
 EXCLUDES = ('en', 'ca', 'fr')
@@ -125,7 +131,7 @@ class Translator(object):
         :rtype: :class:`list` (when a list is passed)
 
         Basic usage:
-            >>> from asyncgltranslate import Translator
+            >>> from asyncgltrans import Translator
             >>> translator = Translator()
             >>> translator.translate('안녕하세요.')
             <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
@@ -219,7 +225,7 @@ class Translator(object):
         :rtype: :class:`list` (when a list is passed)
 
         Basic usage:
-            >>> from asyncgltranslate import Translator
+            >>> from asyncgltrans import Translator
             >>> translator = Translator()
             >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
             <Detected lang=ko confidence=0.27041003>
@@ -316,7 +322,7 @@ class AsyncTranslator(Translator):
         if isinstance(text, list):
             result = []
             for item in text:
-                translated = self.translate(item, dest=dest, src=src)
+                translated = await self.translate(item, dest=dest, src=src)
                 result.append(translated)
             return result
 
@@ -357,6 +363,8 @@ class AsyncTranslator(Translator):
         # put final values into a new Translated object
         result = Translated(src=src, dest=dest, origin=origin,
                             text=translated, pronunciation=pron, extra_data=extra_data)
+
+        await self.session.close()
 
         return result
 

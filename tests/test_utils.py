@@ -1,4 +1,4 @@
-from asyncgltranslate import utils
+from asyncgltrans import utils
 from pytest import raises
 
 

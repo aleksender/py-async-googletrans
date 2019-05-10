@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from asyncgltranslate import gtoken
+from asyncgltrans import gtoken
 from pytest import fixture
 
 
