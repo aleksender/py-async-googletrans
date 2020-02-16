@@ -286,6 +286,9 @@ class AsyncTranslator(Translator):
         self.service_urls = service_urls or ['translate.google.com']
         self.token_acquirer = AsyncTokenAcquirer(session=self.session, host=self.service_urls[0])
 
+    def last_response(self):
+        return self.session.last_response()
+
     async def _translate(self, text, dest, src):
         if not PY3 and isinstance(text, str):  # pragma: nocover
             text = text.decode('utf-8')

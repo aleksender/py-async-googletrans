@@ -16,6 +16,7 @@ class TranslateSession:
         else:
             self.proxy = None
         self.session = None
+        self._last_response = None
 
     def _init_session(self):
         if self.timeout is not None:
@@ -39,9 +40,14 @@ class TranslateSession:
         if self.session is None:
             self._init_session()
 
-        return await self.session.get(url=url)
+        self._last_response = await self.session.get(url=url, proxies=self.proxy)
+        return self.last_response()
 
     async def close(self):
         if not self.session.closed:
             await self.session.close()
+        self.session = None
+
+    def last_response(self):
+        return self._last_response
 
