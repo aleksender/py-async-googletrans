@@ -1,6 +1,6 @@
 """Free Google Translate API for Python. Translates totally free of charge."""
 __all__ = 'Translator',
-__version__ = '0.0.20'
+__version__ = '0.0.21'
 
 
 from asyncgltrans.client import Translator, AsyncTranslator
