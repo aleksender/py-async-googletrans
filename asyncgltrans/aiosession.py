@@ -40,7 +40,7 @@ class TranslateSession:
         if self.session is None:
             self._init_session()
 
-        self._last_response = await self.session.get(url=url, proxies=self.proxy)
+        self._last_response = await self.session.get(url=url, proxy=self.proxy)
         return self.last_response()
 
     async def close(self):
